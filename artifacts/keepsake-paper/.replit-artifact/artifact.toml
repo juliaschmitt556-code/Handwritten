@@ -1,0 +1,19 @@
+kind = "design-system"
+previewPath = "/keepsake-paper/"
+title = "Keepsake Paper"
+description = "A reusable design system for a handwritten-card maker, pairing warm ivory paper and soft blush with readable expressive type, fine details, and restrained romantic character."
+version = "1.0.0"
+id = "artifacts/keepsake-paper"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/keepsake-paper/" ]
+localPort = 25157
+
+[services.development]
+run = "pnpm --filter @workspace/keepsake-paper run dev"
+
+[services.env]
+PORT = "25157"
+BASE_PATH = "/keepsake-paper/"
