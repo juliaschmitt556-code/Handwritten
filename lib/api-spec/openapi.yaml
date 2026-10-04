@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: cards
+    description: Text-free card artwork generation
 paths:
   /healthz:
     get:
@@ -24,6 +26,37 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /card-artwork/generate:
+    post:
+      operationId: generateCardArtwork
+      tags: [cards]
+      summary: Generate a text-free decorative card artwork layer
+      description: Generates an illustration layer only. Card messages are rendered separately by the client.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CardArtworkRequest"
+      responses:
+        "200":
+          description: Generated artwork image
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardArtwork"
+        "400":
+          description: Invalid artwork request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardArtworkError"
+        "502":
+          description: Artwork provider failed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CardArtworkError"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +66,41 @@ components:
           type: string
       required:
         - status
+    CardArtworkRequest:
+      type: object
+      properties:
+        artworkStyle:
+          type: string
+          enum: [watercolor, botanical-linework, pressed-petals]
+        decoration:
+          type: string
+          enum: [rose-sprig, wildflower, olive-branch, none]
+        paperTone:
+          type: string
+          enum: [warm-cream, ivory, blush-ivory]
+      required:
+        - artworkStyle
+        - decoration
+        - paperTone
+    CardArtwork:
+      type: object
+      properties:
+        b64_json:
+          type: string
+        mimeType:
+          type: string
+        provider:
+          type: string
+          enum: [gemini, groq-svg, none]
+      required:
+        - b64_json
+        - mimeType
+        - provider
+    CardArtworkError:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
 

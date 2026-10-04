@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Handwritten Card Engine"
+description = "A focused card-creation, rendering, scanner, and export workspace. It generates text-free artwork separately from exact German and English message layers, then creates print-ready and shareable outputs."
+version = "1.0.0"
+id = "artifacts/card-engine"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23648
+
+[services.development]
+run = "pnpm --filter @workspace/card-engine run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/card-engine", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/card-engine/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23648"
+BASE_PATH = "/"
