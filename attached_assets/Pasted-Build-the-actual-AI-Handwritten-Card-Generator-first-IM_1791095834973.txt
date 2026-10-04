@@ -1,0 +1,642 @@
+Build the actual AI Handwritten Card Generator first.
+
+IMPORTANT:
+
+Do NOT build a landing page.
+Do NOT build a marketing website.
+Do NOT build a dashboard.
+Do NOT build a full Card Studio website yet.
+Do NOT spend time building accounts, navigation, pricing, or a SaaS website.
+
+For this phase, I ONLY want you to build the actual card creation, rendering, finishing, scanning, and export engine.
+
+The result should be a working digital card that can be generated immediately from the provided card specification below.
+
+==================================================
+CARD TO GENERATE NOW
+
+Recipient:
+
+Opal
+
+Card style:
+
+Romantic, elegant, warm, personal, premium handwritten card.
+
+Primary language:
+
+German
+
+Secondary language:
+
+English
+
+Paper:
+
+Premium warm cream paper with subtle natural paper fibers.
+
+Handwriting:
+
+Elegant realistic handwritten style.
+
+Ink:
+
+Natural dark ink.
+
+Decorations:
+
+Very subtle romantic details. Keep the design elegant and mature. Do not overcrowd the card.
+
+Application/card presentation background:
+
+Soft pink.
+
+The actual card should remain cream/ivory.
+
+==================================================
+EXACT CARD MESSAGE
+
+The German text must appear exactly as written:
+
+“Für meine liebe Opal,
+
+Aus Deutschland habe ich nur an dich gedacht.
+Von meinem Fan zu meiner Freundin – du bist mein Herz.
+Ich kann es kaum erwarten, dich in Texas zu sehen.
+
+Für immer dein,
+Val”
+
+English translation should appear underneath in a smaller, elegant handwritten/printed style:
+
+“For my dear Opal,
+
+From Germany, I could think of nothing but you.
+From being your fan to being your boyfriend – you are my heart.
+I can’t wait to see you in Texas.
+
+Forever yours,
+Val”
+
+IMPORTANT:
+
+The text above is FINAL.
+
+Do not rewrite it.
+Do not paraphrase it.
+Do not translate it differently.
+Do not invent additional sentences.
+Do not change the name.
+Do not change punctuation.
+Do not allow an image-generation model to generate the final text.
+
+The exact text must be rendered by a dedicated high-resolution text layer.
+
+==================================================
+THE CARD GENERATION PIPELINE
+
+Build this exact pipeline:
+
+CARD SPECIFICATION
+↓
+AI CARD DESIGN
+↓
+CARD ARTWORK
+↓
+EXACT MESSAGE RENDERING
+↓
+MESSAGE + ARTWORK COMPOSITING
+↓
+PHOTOREALISTIC FINISHING
+↓
+HIGH-RESOLUTION MASTER
+↓
+300 DPI PRINT MASTER
+↓
+DIGITAL VERSIONS
+↓
+EXPORT
+
+==================================================
+
+1. GENERATE THE CARD ARTWORK
+    ==================================================
+
+Create the visual appearance of a beautiful physical handwritten card.
+
+The card should look like a real premium stationery card.
+
+Use:
+
+* warm cream paper
+* subtle paper fibers
+* natural paper grain
+* realistic ink absorption
+* elegant handwritten appearance
+* subtle romantic decoration
+* realistic paper edges
+* realistic shadows
+* soft natural lighting
+* subtle depth
+* realistic physical texture
+
+The design must feel handcrafted rather than AI-generated.
+
+Do not use:
+
+* neon
+* futuristic UI
+* excessive hearts
+* cartoon graphics
+* fake logos
+* watermarks
+* random words
+* random letters
+* fake signatures
+
+==================================================
+2. EXACT MESSAGE LAYER
+
+Create a dedicated text-rendering layer.
+
+This is one of the most important parts of the project.
+
+The AI image generator must NOT render the final message.
+
+Instead:
+
+1. Generate the card artwork without important text.
+2. Render the exact German message separately.
+3. Render the exact English translation separately.
+4. Apply realistic handwriting typography.
+5. Position the text naturally on the card.
+6. Apply subtle ink texture.
+7. Composite the text onto the card.
+8. Produce the final high-resolution card.
+
+The text must remain selectable/structured internally until final rasterization.
+
+Use high-resolution rendering so the text remains sharp at 300 DPI.
+
+==================================================
+3. REALISTIC HANDWRITING
+
+The handwriting should look like an actual person wrote it.
+
+Implement a handwriting layer capable of:
+
+* natural character spacing
+* subtle baseline variation
+* realistic line spacing
+* natural stroke variation
+* slight ink variation
+* realistic letter connections
+* subtle imperfections
+
+However:
+
+DO NOT intentionally make the writing difficult to read.
+
+It should be beautiful and clearly readable.
+
+If an appropriate handwriting font is unavailable, create a configurable handwriting-font system so another font can be added later.
+
+==================================================
+4. PHOTOREALISTIC FINISHING
+
+After composing the artwork and exact text, apply the final physical-card treatment.
+
+The result should look like a real card photographed with a high-quality phone/camera.
+
+Add subtle:
+
+* paper texture
+* ink absorption
+* realistic shadows
+* natural lighting
+* edge detail
+* slight depth
+* realistic perspective
+* subtle camera softness
+* natural color grading
+
+Do NOT blur the message.
+
+Do NOT distort the message.
+
+Do NOT change the message.
+
+The final image should look like:
+
+“A real handwritten card sitting on a beautiful surface and photographed naturally.”
+
+==================================================
+5. CARD PREVIEW
+
+Immediately display the completed card.
+
+The preview should show:
+
+* pink application background
+* realistic cream physical card
+* full German message
+* English translation underneath
+* realistic handwritten appearance
+* subtle shadow beneath card
+
+The card should be the main focus.
+
+Add only simple controls:
+
+Zoom
+Reset
+Fullscreen
+Download
+Edit
+Finalize
+
+Do not build a complicated dashboard.
+
+==================================================
+6. 300 DPI PRINT MASTER
+
+Generate a true high-resolution print master.
+
+Support:
+
+5×7 inch:
+
+1500 × 2100 pixels
+300 DPI
+
+4×6 inch:
+
+1200 × 1800 pixels
+300 DPI
+
+The final message and artwork must be rendered at sufficient resolution.
+
+Do not generate a small image and simply upscale it.
+
+Create the final master at the required dimensions.
+
+==================================================
+7. PRINT EXPORT
+
+Implement:
+
+5×7 PNG
+5×7 JPG
+4×6 PNG
+4×6 JPG
+Print-ready PDF
+
+The PDF must use the correct physical dimensions.
+
+Allow optional 0.125-inch bleed.
+
+Calculate bleed dimensions correctly.
+
+Keep the final card centered within the safe area.
+
+==================================================
+8. DIGITAL EXPORT
+
+Create:
+
+High Quality JPG
+
+WhatsApp Version
+
+Email Version
+
+The WhatsApp and email versions should be optimized for sharing while keeping the card sharp and beautiful.
+
+Never replace the original high-resolution master with a compressed version.
+
+Keep:
+
+PRINT MASTER
+
+and
+
+DIGITAL MASTER
+
+as separate outputs.
+
+==================================================
+9. SCAN & DIGITIZE
+
+Build the physical-card scanner now as part of the card engine.
+
+Allow the user to upload a photograph of a real handwritten card.
+
+Then automatically:
+
+1. Detect the card.
+2. Detect its four corners.
+3. Crop it.
+4. Correct perspective.
+5. Straighten it.
+6. Remove unwanted background.
+7. Correct brightness.
+8. Correct contrast.
+9. Reduce harsh shadows.
+10. Improve readability.
+11. Preserve handwriting.
+12. Preserve paper texture.
+13. Produce a clean digital version.
+
+Use OpenCV.js or another suitable image-processing solution.
+
+If automatic detection fails, provide manual four-corner controls.
+
+The user must be able to move:
+
+Top-left
+Top-right
+Bottom-left
+Bottom-right
+
+corners manually.
+
+Then apply perspective transformation.
+
+==================================================
+10. SCAN CONTROLS
+
+Include:
+
+Auto Crop
+
+Perspective Correction
+
+Brightness
+
+Contrast
+
+Shadow Reduction
+
+Paper Cleanup
+
+Sharpness
+
+Rotation
+
+Reset
+
+Apply
+
+Export
+
+Show:
+
+BEFORE
+
+and
+
+AFTER
+
+==================================================
+11. EXPORT PANEL
+
+When the card is finished, show:
+
+EXPORT CARD
+
+🖨️ Print Ready
+
+5×7 — 1500×2100 px — 300 DPI
+
+4×6 — 1200×1800 px — 300 DPI
+
+PDF — Print Ready
+
+📱 Digital
+
+High Quality JPG
+
+WhatsApp Version
+
+Email Version
+
+📷 Scan & Digitize
+
+Upload physical card
+
+Auto-crop
+
+Perspective correction
+
+Brightness / contrast
+
+Paper cleanup
+
+Export
+
+Every button must actually work.
+
+Do not create fake buttons.
+
+==================================================
+12. EDITING
+
+The user should be able to tell the card engine:
+
+“Make the handwriting more elegant.”
+
+“Make the paper slightly warmer.”
+
+“Remove the decoration.”
+
+“Make the English smaller.”
+
+“Move the message slightly lower.”
+
+“Change only the message.”
+
+“Keep everything else exactly the same.”
+
+The system must preserve the current card state and only change the requested element.
+
+==================================================
+13. FINALIZATION
+
+Create a:
+
+FINALIZE CARD
+
+process.
+
+When clicked:
+
+1. Validate message.
+2. Validate artwork.
+3. Render exact text.
+4. Composite card.
+5. Apply realistic finishing.
+6. Generate high-resolution master.
+7. Generate 5×7.
+8. Generate 4×6.
+9. Generate PDF.
+10. Generate digital JPG.
+11. Generate WhatsApp version.
+12. Generate email version.
+13. Make all exports available.
+
+==================================================
+14. QUALITY CHECK
+
+Before export, automatically verify:
+
+* “Opal” is spelled correctly.
+* German message is exact.
+* English message is exact.
+* “Val” is correct.
+* No text is missing.
+* No random AI text exists.
+* No watermark exists.
+* No unwanted logo exists.
+* Image dimensions are correct.
+* Print master is 300 DPI.
+* Card proportions are correct.
+* Text is readable.
+* Card artwork is complete.
+
+If any check fails, fix it before export.
+
+==================================================
+15. TECHNOLOGY
+
+Use a Replit-compatible implementation.
+
+Preferred:
+
+Frontend:
+React
+TypeScript
+Vite
+
+Backend:
+Node.js
+Express
+
+Image processing:
+Sharp
+Canvas
+OpenCV.js where appropriate
+
+Keep image-generation provider code modular.
+
+All API keys must remain server-side.
+
+Use environment variables.
+
+Never expose API keys in browser code.
+
+==================================================
+16. FILE STRUCTURE
+
+Keep the project organized around the actual card engine:
+
+src/
+card/
+CardSpecification
+CardRenderer
+MessageRenderer
+CardComposer
+CardFinishing
+
+scanner/
+Scanner
+PerspectiveCorrection
+ImageEnhancement
+
+export/
+PrintExporter
+PDFExporter
+DigitalExporter
+
+ai/
+CardDesignService
+ImageGenerationService
+MessageService
+
+components/
+CardPreview
+ExportPanel
+ScannerPanel
+EditorControls
+
+server/
+routes/
+services/
+image/
+export/
+scanner/
+
+==================================================
+17. DO NOT BUILD THE FULL PRODUCT WEBSITE
+
+For this phase, stop at the actual working card engine.
+
+Do not build:
+
+* landing page
+* pricing page
+* login
+* signup
+* subscription system
+* user dashboard
+* marketing pages
+* community
+* profile system
+* billing
+* navigation-heavy SaaS interface
+
+Those will come later.
+
+Right now I want the card itself to work perfectly.
+
+==================================================
+18. FINAL RESULT
+
+When I run the Replit project, I should be able to immediately see and generate the finished card.
+
+The first working result should be this:
+
+A beautiful romantic cream handwritten card for Opal on a soft pink presentation background, containing the exact German message and English translation above.
+
+It should look photorealistic.
+
+It should look handwritten.
+
+It should look professionally finished.
+
+It should be exportable.
+
+It should be printable.
+
+It should support 300 DPI.
+
+It should support 5×7 and 4×6.
+
+It should support PDF.
+
+It should support WhatsApp.
+
+It should support email.
+
+It should include the physical-card scanner and digitizer.
+
+It should include automatic cropping, perspective correction, brightness/contrast, paper cleanup, and export.
+
+Do the complete implementation and finishing touches.
+
+Do not stop after creating the UI.
+
+Actually connect the generation, rendering, composition, image processing, scanner, and export pipelines.
+
+Then run the application and test the complete workflow.
+
+Fix any errors you find before finishing.
